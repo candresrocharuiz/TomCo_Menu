@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de Administración del programa de fidelización TomCo Bakery. Gestiona clientes, tarjetas de lealtad y premios.">
+    <meta name="keywords" content="TomCo Bakery, administración, fidelización, lealtad, panadería">
+    <meta name="author" content="TomCo Bakery">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin — TomCo Bakery Fidelización</title>
+    <link rel="icon" type="image/jpeg" href="assets/TomcoLogo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loyalty.css">
+</head>
+<body class="loyalty-page">
+
+    <!-- ═══════════════════════════════════════════
+         TOP NAVIGATION BAR
+    ═══════════════════════════════════════════ -->
+    <nav class="loyalty-topbar">
+        <a href="index.html" class="topbar-brand">
+            <img src="assets/TomCoLogoName.png" alt="TomCo Bakery">
+            <span>Panel de Administración</span>
+        </a>
+        <div class="topbar-nav">
+            <a href="index.html">🏠 Inicio</a>
+            <a href="fidelidad.html">🌴 Fidelidad</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         LAYOUT: SIDEBAR + MAIN CONTENT
+    ═══════════════════════════════════════════ -->
+    <div class="admin-layout">
+
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="active" data-view="dashboard">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="#customers" data-view="customers">
+                    <span class="nav-icon">👥</span>
+                    Clientes
+                </a>
+                <a href="#activity" data-view="activity">
+                    <span class="nav-icon">📋</span>
+                    Actividad
+                </a>
+                <a href="#settings" data-view="settings">
+                    <span class="nav-icon">⚙️</span>
+                    Configuración
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <div id="admin-content">
+                <!-- Views are rendered here by admin.js -->
+            </div>
+        </main>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         MOBILE BOTTOM NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav class="mobile-nav">
+        <a href="#dashboard" class="active" data-view="dashboard">
+            <span class="nav-icon">📊</span>
+            Dashboard
+        </a>
+        <a href="#customers" data-view="customers">
+            <span class="nav-icon">👥</span>
+            Clientes
+        </a>
+        <a href="#activity" data-view="activity">
+            <span class="nav-icon">📋</span>
+            Actividad
+        </a>
+        <a href="#settings" data-view="settings">
+            <span class="nav-icon">⚙️</span>
+            Config
+        </a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         MODAL OVERLAY
+    ═══════════════════════════════════════════ -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+            <div id="modal-footer" class="modal-footer"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         CUSTOMER DETAIL SLIDE-OUT PANEL
+    ═══════════════════════════════════════════ -->
+    <div id="detail-backdrop" class="detail-panel-backdrop" onclick="closeDetailPanel()"></div>
+    <div id="detail-panel" class="detail-panel">
+        <div class="detail-panel-header">
+            <h2>Detalle del Cliente</h2>
+            <button class="modal-close" onclick="closeDetailPanel()" aria-label="Cerrar">&times;</button>
+        </div>
+        <div id="detail-panel-body" class="detail-panel-body">
+            <!-- Customer detail content rendered by admin.js -->
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         TOAST NOTIFICATIONS
+    ═══════════════════════════════════════════ -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- ═══════════════════════════════════════════
+         SCRIPTS
+    ═══════════════════════════════════════════ -->
+    <script src="loyalty-data.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>

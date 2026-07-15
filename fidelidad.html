@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta tu tarjeta de fidelidad de Tom&Co Bakery. Revisa tu progreso, stickers acumulados y premios disponibles.">
+    <meta name="keywords" content="Tom&Co Bakery, tarjeta de fidelidad, programa de lealtad, stickers, premios, panadería">
+    <meta name="author" content="Tom&Co Bakery">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Tarjeta de Fidelidad - Tom&Co Bakery">
+    <meta property="og:description" content="Consulta tu progreso y descubre cuánto falta para tu próximo premio en Tom&Co Bakery.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#3E2723">
+
+    <title>Tarjeta de Fidelidad - Tom&Co Bakery</title>
+
+    <link rel="icon" type="image/jpeg" href="assets/TomcoLogo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loyalty.css">
+</head>
+<body class="loyalty-page">
+
+    <!-- ===== TOP NAVIGATION BAR ===== -->
+    <nav class="loyalty-topbar">
+        <a href="index.html" class="topbar-brand" aria-label="Volver al sitio principal">
+            <img src="assets/TomCoLogoName.png" alt="Tom&Co Bakery">
+            <span>Tarjeta de Fidelidad</span>
+        </a>
+        <div class="topbar-nav">
+            <a href="index.html">← Volver al menú</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="customer-hero">
+        <div class="hero-content">
+            <h1>Tu Tarjeta de Fidelidad</h1>
+            <p>Consulta tu progreso y descubre cuánto falta para tu próximo premio</p>
+
+            <!-- Phone Lookup Form -->
+            <form id="phone-lookup-form" class="customer-lookup-form" autocomplete="off">
+                <input
+                    type="tel"
+                    id="phone-input"
+                    placeholder="Ingresa tu número de teléfono"
+                    inputmode="numeric"
+                    required
+                    aria-label="Número de teléfono"
+                >
+                <button type="submit" class="btn-lookup" aria-label="Buscar tarjeta">
+                    🔍 Buscar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== RESULT CONTAINER ===== -->
+    <div id="customer-result" class="customer-result">
+        <!-- Populated dynamically by fidelidad.js -->
+    </div>
+
+    <!-- ===== HOW IT WORKS SECTION ===== -->
+    <section class="customer-how-it-works">
+        <h2>¿Cómo funciona?</h2>
+        <div class="how-steps">
+            <div class="how-step">
+                <div class="step-num">🛍️</div>
+                <h3>Compra</h3>
+                <p>Realiza una compra en Tom&Co Bakery</p>
+            </div>
+            <div class="how-step">
+                <div class="step-num">⭐</div>
+                <h3>Sticker</h3>
+                <p>Recibe un sticker por cada compra</p>
+            </div>
+            <div class="how-step">
+                <div class="step-num">🎁</div>
+                <h3>Premio</h3>
+                <p>¡Completa 10 stickers y gana un premio!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="customer-footer">
+        <p>&copy; 2026 Tom&Co Bakery. Todos los derechos reservados.</p>
+        <a href="index.html">Visita nuestro menú</a>
+    </footer>
+
+    <!-- ===== TOAST CONTAINER ===== -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- ===== CONFETTI CANVAS (Hidden until triggered) ===== -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="loyalty-data.js"></script>
+    <script src="fidelidad.js"></script>
+</body>
+</html>
